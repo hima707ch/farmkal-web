@@ -1,8 +1,10 @@
 .nav-cont{
+    position: absolute;
+    top : 0;
     display: flex;
     justify-content: space-between;
     padding: 0rem 3rem;
-    background-color: #F9F6E6;
+    background: transparent;
     transition: background-color 0.6s;
 }
 
@@ -13,22 +15,60 @@
     cursor: pointer;
 }
 
+.profile-pic {
+    border-radius: 100%;
+    width : 3vw
+}
+
+.profile-button{
+    position: relative;
+    margin-left: 3.5vw;
+    
+}
+
+.profile-options{
+    position: absolute;
+    
+    padding: 0vw 0vw;
+}
+
+.profile-options button{
+    width : 100%;
+    border : none;
+    background-color: aliceblue;
+    font-size: calc( min(1.5vw, 1.5rem) );
+    padding: 0.5rem 2vw;
+    border-bottom: 1px solid #201f26;
+    cursor: pointer;
+}
+
+.profile-options button:hover{
+    background-color: rgb(214, 235, 252)
+}
+
 .nav-list{
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     width : 40vw;
     margin-left: 5vw;
     font-size: calc( min(2vw, 2rem) );
     align-self: center;
+    align-items: center;
     
 }
 
-.nav-list > li {
+li{
+    list-style-type: none;
+}
+
+.nav-list > a {
     text-decoration: none;
     list-style-type: none;
     font-weight: 600;
     transition: all 0.6s;
     cursor: pointer;
+    color: #201f26;
+    margin-left: 3.5vw;
 }
 
 .nav-cont:hover{
@@ -36,12 +76,14 @@
     .logo {
       filter: invert(100%);
     }
-    .nav-list >li  {
-      color : white
+    .nav-list >a  {
+      color : rgb(247, 247, 247);
     }
   }
 
-.nav-cont > input {
+ 
+
+.nav-cont input {
     border: 0;
     margin: 0.5vh 0rem;
     align-self: center;
@@ -56,7 +98,7 @@
   transition: border-radius 0.5s;
 }
 
-.nav-cont > input:focus{
+.nav-cont input:focus{
     border-radius: 1.2rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -78,4 +120,32 @@
     .nav-cont{
         padding: 0rem 1rem;
     }
+}
+
+@media (max-width : 550px) {
+    .nav-cont{
+        flex-direction: column;
+    }    
+    .nav-list{
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 1.5rem;
+        margin: 1.2rem;
+        width: 80vw;
+        
+    }
+    .nav-list > li {
+        margin: 0.5rem 2.5rem;
+        width : 20%;
+        padding: auto;
+        
+    }
+    .logo{
+        margin: auto;
+        width: 12rem;
+    }
+    .nav-cont input{
+        width: 70vw;
+    }
+    
 }
