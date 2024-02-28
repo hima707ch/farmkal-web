@@ -1,6 +1,6 @@
 
 .only-on-mobile{
-    display: none;
+    display: none !important;
 }
 
 .nav-cont{
@@ -129,7 +129,8 @@ li{
 @media (max-width : 550px) {
 
     .only-on-mobile{
-        display: list-item;
+        display: list-item !important;
+        list-style-type: none;
     }
 
     .only-off-mobile{

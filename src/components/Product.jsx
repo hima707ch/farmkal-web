@@ -4,6 +4,7 @@ import './styles/product.css'
 import axios from 'axios';
 import CategoriesSelector from './CategoriesSelector';
 import CitiesSelector from './CitiesSelector';
+import { useSelector } from 'react-redux';
 
 const Product = () => {
 
@@ -12,6 +13,8 @@ const Product = () => {
   const [tractor, settractor] = useState();
   const [selectedcategories, setSelectedcategories] = useState(['All']);
   const [selectedCities, setSelectedCities] = useState(['All']);
+
+  const { isAuth } = useSelector(s=>s.user)
 
   async function fetchProducts(filter){
     let query = filter;
@@ -57,7 +60,7 @@ const Product = () => {
   
 
   return (
-      <div className="home-cont">
+      <div className={`home-cont ${isAuth && "mobile-home-cont" }`}>
 
         <div className="filters-cont">
           <div className="filters">

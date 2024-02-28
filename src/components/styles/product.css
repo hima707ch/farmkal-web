@@ -1,3 +1,4 @@
+
 .home-cont{
     max-width: 130rem;
     margin: 4rem auto;
@@ -125,6 +126,11 @@
 }
 
 @media (max-width : 1000px) {
+
+    .mobile-home-cont{
+        margin-top: 9rem;
+    }
+
     .home-cont{
         padding: 1rem 5rem;
     }
@@ -140,6 +146,7 @@
 }
 
 @media (max-width : 575px) {
+
     .home-cont{
         padding: 1rem 1rem;
     }

@@ -96,7 +96,7 @@ const Profile = () => {
 
     </div>
 
-    <div className="buttons">
+    <div className="only-on-mobile buttons">
           <Button onClick={()=>{ nav('/add-new') }} variant='contained' color="success"> Add New Product </Button>
         </div>
     
