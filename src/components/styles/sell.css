@@ -102,7 +102,7 @@ label{
     padding: 0.75rem 1.75rem;
     border-radius: 0.5rem;
     margin-top: 2rem;
-    background-color: #6f6e6a;
+    background-color: #4aaa37;
     color: White;
     font-size: 1.25rem;
     border: 0rem;
@@ -136,6 +136,7 @@ label{
   height: 60vh;
   overflow-y: scroll;
   scrollbar-width: thin;
+
 }
 
 .hei{
@@ -144,4 +145,30 @@ label{
     background-color: #6f6e6a;
     color: #806b15;
 
+}
+
+@media (max-width: 575px){
+    .edit-cont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        padding: 4rem 1rem;
+    }
+
+    .edit-cont > div{
+        margin: 0.5rem 1rem;
+        width: 75%;
+    }
+
+    .sell-cont{
+        margin-top: 14rem;
+        padding-top: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data-cont{
+        width: 75vw;
+    }
 }

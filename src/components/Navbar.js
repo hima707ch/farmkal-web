@@ -25,12 +25,12 @@ const Navbar = () => {
 
   async function handleLogout(){
     dispatch(logout())
-    const response = await axios.get("https://jdgsjq-4000.csb.app/logout", { withCredentials: 'true' } );
+    const response = await axios.get("https://mpclwq-4000.csb.app/logout", { withCredentials: 'true' } );
   }
 
   
   async function getMyChats(){
-    const chats = await axios.get('https://jdgsjq-4000.csb.app/api/v1/chat',{ withCredentials: true });
+    const chats = await axios.get('https://mpclwq-4000.csb.app/api/v1/chat',{ withCredentials: true });
     setmychats(chats.data.emailList);
   }
 
@@ -54,9 +54,10 @@ const Navbar = () => {
 
         {chatId && loadchat(chatId)}
 
+    <div className='head-images'>
         <Link to={'/'} > <img className='logo' src = {logo} /> </Link>
-
-       
+        { isAuth && <Link to={'/profile'} > <img className='logo-profile-mobile only-on-mobile' src = {user.photoUrl} /> </Link> }
+    </div>
 
         <input onChange={(e,value)=>{
           setinp(e.target.value);
@@ -72,7 +73,11 @@ const Navbar = () => {
             { isAuth &&  <Link > <li onClick={ ()=>{setshowChats(!showChats)} } > Chats </li> </Link> } 
             {/* { isAuth && <Link to = {'/add-new'}> <li> + Add </li> </Link> } */}
             
-            { isAuth &&  <li className='profile-button'> <img className='profile-pic' src = {user.photoUrl} /> <div className='profile-options'>
+            { isAuth && <Link className='only-on-mobile' to={'/cart'}> <li> Liked </li> </Link> }
+
+            { isAuth && <Link className='only-on-mobile' onClick={ handleLogout }> <li> Logout </li> </Link> }
+
+            { isAuth &&  <li className='profile-button only-off-mobile'> <img className='profile-pic' src = {user.photoUrl} /> <div className='profile-options'>
               <Link to={'/cart'} > <button> Liked </button> </Link>
               <button onClick={()=>setshowChats(true)}> Chats </button>
               <button onClick={ handleLogout } > Logout </button>

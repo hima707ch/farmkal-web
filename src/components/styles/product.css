@@ -141,6 +141,29 @@
 
 @media (max-width : 575px) {
     .home-cont{
-        padding: 1rem 2rem;
+        padding: 1rem 1rem;
+    }
+
+    .prod-card-cont {
+        margin: 1.5rem 0;
+    }
+
+    .img-prod{
+        width: 65vw;
+    }
+
+    .product-cont{
+        padding : 1rem 1rem;
+    }
+
+    .filters{
+        margin-right: 10vw;
+        margin-left: 10vw;
+        display: flex;
+        flex-direction: row;
+    }
+    .filters > div{
+        margin-right: 5vw;
+        margin-left: 5vw;
     }
 }

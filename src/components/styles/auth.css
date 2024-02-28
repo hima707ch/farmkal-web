@@ -40,3 +40,28 @@
     font-size: 1.5rem;
     
 }
+
+@media (max-width : 575px){
+    .auth-cont{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left{
+        width: 100vw;
+        height: 40vh;
+        justify-content: end;
+        color: white;
+    }
+    .left p {
+        margin-right: 10vw;
+        margin-left: 10vw;
+        margin-top: 0;
+    }
+
+    .right p {
+        font-size: 1.15rem;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
+    }
+}

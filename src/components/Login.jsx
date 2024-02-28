@@ -17,12 +17,12 @@ const Login = () => {
   const queryParams = new URLSearchParams(location.search);
 
   function handleOAuth(){
-    window.open('https://jdgsjq-4000.csb.app/auth/google/callback',"_self");
+    window.open('https://mpclwq-4000.csb.app/auth/google/callback',"_self");
   }
 
   const getUser = async () => {
     try {
-        const response = await axios.get("https://jdgsjq-4000.csb.app/login/sucess", { withCredentials: 'true', });
+        const response = await axios.get("https://mpclwq-4000.csb.app/login/sucess", { withCredentials: 'true', });
 
         console.log("response",response)
 
@@ -38,7 +38,7 @@ const Login = () => {
     const token = queryParams.get('token');
 
     if(token) {
-      const resp = await axios.post('https://jdgsjq-4000.csb.app/login/verify' , { token }, {
+      const resp = await axios.post('https://mpclwq-4000.csb.app/login/verify' , { token }, {
         withCredentials: true
       })
       console.log( resp.data );

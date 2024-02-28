@@ -110,3 +110,33 @@
 .remove{
     color: blue;
 }
+
+@media (max-width:575px) {
+    .chat-cont{
+        margin: 0;
+        width: 80vw;
+        max-width: max-content;
+        height: 80vh;
+        position: fixed;
+        
+        left: 0.5rem;
+    }
+    .chats{
+        margin-bottom: 8rem;
+        scrollbar-color: transparent;
+    }
+    .send-box{
+        width: 80%;
+        margin-bottom: 1rem;
+        left: 2rem;
+        justify-content: left;
+    }
+    .send-box input{
+        width: 80%;
+        height: 4rem;
+    }
+    .send-box button{
+        padding-right: 0.5rem;
+        width: 0.5rem;
+    }
+}

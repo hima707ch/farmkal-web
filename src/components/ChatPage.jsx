@@ -6,7 +6,7 @@ import './styles/chat.css'
 import SendIcon from '@mui/icons-material/Send';
 import CloseIcon from '@mui/icons-material/Close';
 
-const socket = io('https://jdgsjq-4000.csb.app', { transports : ['websocket','websocket', 'polling']}); // Connect to your server
+const socket = io('https://mpclwq-4000.csb.app', { transports : ['websocket','websocket', 'polling']}); // Connect to your server
 
 const ChatPage = ({prod, reciverId, setshowChat}) => {
 
@@ -22,7 +22,7 @@ const ChatPage = ({prod, reciverId, setshowChat}) => {
 
   async function fetchChat(){
     // Loading prev chat
-    const resp = await axios.get(`https://jdgsjq-4000.csb.app/api/v1/chat/${ reciverId }`,{ withCredentials: true });
+    const resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/chat/${ reciverId }`,{ withCredentials: true });
 
     const chat = prod ? resp.data.chatData.filter( chat => (chat.product == prod._id) ? true : false ) : resp.data.chatData;
 
@@ -32,7 +32,7 @@ const ChatPage = ({prod, reciverId, setshowChat}) => {
   }
 
   async function fetchReciver(){
-    const resp = await axios.get(`https://jdgsjq-4000.csb.app/api/v1/user/${ reciverId }`,{ withCredentials: true });
+    const resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/user/${ reciverId }`,{ withCredentials: true });
     setreciever(resp.data.user);
   }
   

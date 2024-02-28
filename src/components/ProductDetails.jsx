@@ -30,7 +30,7 @@ const ProductDetails = () => {
   async function handleAddToCart(){
 
     if(isAuth){
-      let resp = await axios.put('https://jdgsjq-4000.csb.app/api/v1/cart',{
+      let resp = await axios.put('https://mpclwq-4000.csb.app/api/v1/cart',{
         type : 'add',
         productId : prod._id,
         quantity : 1
@@ -54,7 +54,7 @@ const ProductDetails = () => {
   }
 
   async function fetchRecomandations(){
-    let resp = await axios.get(`https://jdgsjq-4000.csb.app/api/v1/products?city=${ prod.city }`,{ withCredentials: true });
+    let resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/products?city=${ prod.city }`,{ withCredentials: true });
     setprodCities(resp.data.products);
     setprodNearCities(resp.data.moreProducts)
 
@@ -62,13 +62,13 @@ const ProductDetails = () => {
 
   async function fetchCategoryReccomandations(){
     if(prod.category){
-      const resp = await axios.get(`https://jdgsjq-4000.csb.app/api/v1/products?category=${ prod.category }`,{ withCredentials: true });
+      const resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/products?category=${ prod.category }`,{ withCredentials: true });
       setprodCategories( resp.data.products );
     }
   }
 
   async function getProduct(){
-    const resp = await axios.get(`https://jdgsjq-4000.csb.app/api/v1/product/${params.id}`,{ withCredentials: true });
+    const resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/product/${params.id}`,{ withCredentials: true });
 
     setprod( resp.data.product );
   }
@@ -77,7 +77,7 @@ const ProductDetails = () => {
   useEffect(() => {
 
     getProduct();
-  }, [])
+  }, [params.id])
 
   useEffect(() => {
     

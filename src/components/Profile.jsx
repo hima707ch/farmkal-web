@@ -23,7 +23,7 @@ const Profile = () => {
     const { enqueueSnackbar } = useSnackbar();
 
     async function getMyProduct(){
-        const product = await axios.get('https://jdgsjq-4000.csb.app/api/v1/my-product', { withCredentials: true });
+        const product = await axios.get('https://mpclwq-4000.csb.app/api/v1/my-product', { withCredentials: true });
         console.log(product.data.product);
         setMyProduct(product.data.product);
     }
@@ -44,7 +44,7 @@ const Profile = () => {
     }, [isAuth] )
 
     async function getMyChats(){
-        const chats = await axios.get('https://jdgsjq-4000.csb.app/api/v1/chat',{ withCredentials: true });
+        const chats = await axios.get('https://mpclwq-4000.csb.app/api/v1/chat',{ withCredentials: true });
         console.log(chats.data.emailList);
         setmychats(chats.data.emailList);
     }
@@ -61,7 +61,7 @@ const Profile = () => {
 
 
     async function deleteItem( id ){
-      const resp = await axios.delete( `https://jdgsjq-4000.csb.app/api/v1/product/${ id }`,{ withCredentials: true })
+      const resp = await axios.delete( `https://mpclwq-4000.csb.app/api/v1/product/${ id }`,{ withCredentials: true })
       console.log( resp.data );
 
       enqueueSnackbar("Successfully Deleted", {variant : 'success', anchorOrigin : {
@@ -78,8 +78,8 @@ const Profile = () => {
 
   return (
     <div className='profile-cont'> 
-    <h1> My details </h1>
-    <div className='my-details'>
+    <h1 className='only-off-mobile'> My details </h1>
+    <div className='my-details only-off-mobile'>
 
         <img src={user.photoUrl} />
         <div className='details-profile'> 
@@ -95,12 +95,16 @@ const Profile = () => {
         </div>
 
     </div>
+
+    <div className="buttons">
+          <Button onClick={()=>{ nav('/add-new') }} variant='contained' color="success"> Add New Product </Button>
+        </div>
     
     <h1>My Products</h1>
     {
         myProduct && myProduct.map( (prod)=>
         <div className='prod-card'>
-           <div style={{display: 'flex'}}>
+           <div style={{display: 'flex'}} className='details-profile-1'>
            <div className='details-profile'>
               <h2> {prod.name} </h2>
               <p> Category : <span className='bold'> {prod.category} </span> </p>

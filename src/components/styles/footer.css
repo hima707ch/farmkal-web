@@ -21,3 +21,9 @@
 .f-play{
     width: 8rem;
 }
+
+@media (max-width : 575px){
+    .f-cont{
+        flex-direction: column;
+    }
+}
