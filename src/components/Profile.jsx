@@ -23,7 +23,7 @@ const Profile = () => {
     const { enqueueSnackbar } = useSnackbar();
 
     async function getMyProduct(){
-        const product = await axios.get('https://mpclwq-4000.csb.app/api/v1/my-product', { withCredentials: true });
+        const product = await axios.get(`${domain}/api/v1/my-product`, { withCredentials: true });
         console.log(product.data.product);
         setMyProduct(product.data.product);
     }
@@ -44,7 +44,7 @@ const Profile = () => {
     }, [isAuth] )
 
     async function getMyChats(){
-        const chats = await axios.get('https://mpclwq-4000.csb.app/api/v1/chat',{ withCredentials: true });
+        const chats = await axios.get(`${domain}/api/v1/chat`,{ withCredentials: true });
         console.log(chats.data.emailList);
         setmychats(chats.data.emailList);
     }
@@ -61,7 +61,7 @@ const Profile = () => {
 
 
     async function deleteItem( id ){
-      const resp = await axios.delete( `https://mpclwq-4000.csb.app/api/v1/product/${ id }`,{ withCredentials: true })
+      const resp = await axios.delete( `${domain}/api/v1/product/${ id }`,{ withCredentials: true })
       console.log( resp.data );
 
       enqueueSnackbar("Successfully Deleted", {variant : 'success', anchorOrigin : {

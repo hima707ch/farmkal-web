@@ -22,13 +22,13 @@ const Product = () => {
     if (filter.includes('category=All,')){
       query = '';
     }
-    let resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/products?page=1&limit=8&${ query }`,{ withCredentials: true });
+    let resp = await axios.get(`${domain}/api/v1/products?page=1&limit=8&${ query }`,{ withCredentials: true });
     setProducts(resp.data.products);
 
-    resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/products?page=1&limit=8&city=jaipur`,{ withCredentials: true });
+    resp = await axios.get(`${domain}/api/v1/products?page=1&limit=8&city=jaipur`,{ withCredentials: true });
     setjaipurprod(resp.data.products);
 
-    resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/products?page=1&limit=8&category=tractor`,{ withCredentials: true });
+    resp = await axios.get(`${domain}/api/v1/products?page=1&limit=8&category=tractor`,{ withCredentials: true });
     settractor(resp.data.products)
   }
 

@@ -22,7 +22,7 @@ const App = () => {
   const dispatch =  useDispatch();
 
   async function fetchMe(){
-    const resp = await axios.get('https://mpclwq-4000.csb.app/api/v1/me',{ withCredentials: true });
+    const resp = await axios.get(`${domain}/api/v1/me`,{ withCredentials: true });
     const me = resp.data.user;
 
     if(resp.data.success == true){

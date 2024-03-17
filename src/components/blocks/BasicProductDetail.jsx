@@ -42,7 +42,7 @@ const BasicProductDetail = ({images, prev, type}) => {
 
           if(type == 'new'){
 
-              const resp = await axios.post('https://mpclwq-4000.csb.app/api/v1/products', myform,{ withCredentials: true });
+              const resp = await axios.post(`${domain}/api/v1/products`, myform,{ withCredentials: true });
               
               enqueueSnackbar("Successfully uploaded", {variant : 'success', anchorOrigin : {
                   vertical: 'top',
@@ -51,7 +51,7 @@ const BasicProductDetail = ({images, prev, type}) => {
                 );
             }
             if(type == 'edit'){
-                const resp = await axios.put(`https://mpclwq-4000.csb.app/api/v1/product/${prev._id}`, myform,{ withCredentials: true });
+                const resp = await axios.put(`${domain}/api/v1/product/${prev._id}`, myform,{ withCredentials: true });
 
                 enqueueSnackbar("Update Successfully", {variant : 'success', anchorOrigin : {
                     vertical: 'top',

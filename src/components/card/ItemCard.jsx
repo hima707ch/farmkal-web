@@ -21,7 +21,7 @@ const ItemCard = ({prod}) => {
   // } , [quantity] )
 
   async function getItem(){
-    const resp = await axios.get(`https://mpclwq-4000.csb.app/api/v1/product/${prod.productId}`,{ withCredentials: true });
+    const resp = await axios.get(`${domain}/api/v1/product/${prod.productId}`,{ withCredentials: true });
 
     if(resp.data.success == false){
       return;
@@ -32,7 +32,7 @@ const ItemCard = ({prod}) => {
   }
 
   async function removeItem(){
-    const resp = await axios.put(`https://mpclwq-4000.csb.app/api/v1/cart`,{ type:'remove', productId : prod.productId },{ withCredentials: true });
+    const resp = await axios.put(`${domain}/api/v1/cart`,{ type:'remove', productId : prod.productId },{ withCredentials: true });
 
     dispatch( setUser( resp.data.user ) );
 

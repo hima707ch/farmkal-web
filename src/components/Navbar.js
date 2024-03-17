@@ -25,12 +25,12 @@ const Navbar = () => {
 
   async function handleLogout(){
     dispatch(logout())
-    const response = await axios.get("https://mpclwq-4000.csb.app/logout", { withCredentials: 'true' } );
+    const response = await axios.get(`${domain}/logout`, { withCredentials: 'true' } );
   }
 
   
   async function getMyChats(){
-    const chats = await axios.get('https://mpclwq-4000.csb.app/api/v1/chat',{ withCredentials: true });
+    const chats = await axios.get(`${domain}/api/v1/chat`,{ withCredentials: true });
     setmychats(chats.data.emailList);
   }
 
